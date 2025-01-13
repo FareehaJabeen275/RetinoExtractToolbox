@@ -146,8 +146,3 @@ Reference
 If you use this toolbox for research or projects, please cite:  
 text
 Your Name et al. (2025). "RetinoExtract Toolbox: A Feature Extraction Tool for Fundus Images."
-
-
-
-
-This `README.md` should help users understand, install, and use your toolbox efficiently!
