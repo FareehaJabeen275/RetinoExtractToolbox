@@ -135,12 +135,6 @@ Examples
     Check the "Save CSV" option in the GUI.
     Click "Extract Features" to save the feature values.
 
-Tutorials
-Detailed tutorials and examples are available at:  
-[https://github.com/yourusername/RetinoExtractToolbox/tutorials](https://github.com/yourusername/RetinoExtractToolbox/tutorials)
-
-License
-This toolbox is opensource and available under the MIT License.  
 
 Reference
 If you use this toolbox for research or projects, please cite:  
