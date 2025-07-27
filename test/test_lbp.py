@@ -1,17 +1,23 @@
-# test/test_lbp.py
-
 import numpy as np
-import cv2
 import pytest
-from features import LBP_features  # assuming your LBP function is inside features/LBP_features.py
+from features import LBP_features  # assuming your code is in features/LBP_features.py
 
 def test_lbp_feature_extraction():
-    # 1. Dummy grayscale image (100x100 pixels with gradient)
-    dummy_image = np.tile(np.arange(0, 100, dtype=np.uint8), (100, 1))
+    # Dummy grayscale image (simple 100x100 gradient)
+    dummy_image = np.tile(np.arange(100, dtype=np.uint8), (100, 1))
 
-    # 2. Apply LBP feature extractor
-    lbp_feats = LBP_features.extract_lbp_features(dummy_image)
+    # Call the LBP feature extractor
+    features = LBP_features.extract_lbp_features(dummy_image)
 
-    # 3. Check type and length
-    assert isinstance(lbp_feats, (list, np.ndarray)), "Output should be list or numpy array"
-    assert len(lbp_feats) > 0, "LBP features should not be empty"
+    # Check: output must be a dictionary
+    assert isinstance(features, dict), "Output must be a dictionary"
+
+    # Required feature keys
+    expected_keys = {'Mean', 'Standard Deviation', 'Variance', 'Skewness', 'Kurtosis', 'Entropy'}
+    
+    # Check all expected keys are present
+    assert expected_keys.issubset(features.keys()), "Some keys are missing in the features"
+
+    # Check all values are floats
+    for key in expected_keys:
+        assert isinstance(features[key], float), f"{key} is not a float"
