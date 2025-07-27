@@ -1,13 +1,20 @@
 import numpy as np
 import pytest
-from features import LBP_features  # assuming your code is in features/LBP_features.py
+import sys
+import os
+
+# Add the parent directory to sys.path to resolve imports
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+from features.LBP_features import extract_lbp_features  # ✅ Correct function import
+
 
 def test_lbp_feature_extraction():
     # Dummy grayscale image (simple 100x100 gradient)
     dummy_image = np.tile(np.arange(100, dtype=np.uint8), (100, 1))
 
     # Call the LBP feature extractor
-    features = LBP_features.extract_lbp_features(dummy_image)
+    features = extract_lbp_features(dummy_image)  # ✅ Call directly
 
     # Check: output must be a dictionary
     assert isinstance(features, dict), "Output must be a dictionary"
