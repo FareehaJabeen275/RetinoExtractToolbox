@@ -1,5 +1,30 @@
-recursive-include retinoextract/resources *
+# Include core project files
 include README.md
 include LICENSE
 include requirements.txt
+include .env.txt
+include setup.py
+include pyproject.toml
+include gui.py
+include gui_screenshot.png
 
+# Include all Python source files in the package
+recursive-include features *.py
+recursive-include input *.py
+recursive-include output *.py
+
+# Include tests 
+recursive-include test *.py
+
+# Include the version file if using setuptools_scm
+include retinoextract/_version.py
+
+# Include resource files
+recursive-include retinoextract/resources *
+
+# Include all Markdown, config, and data files 
+global-include *.md *.ini *.cfg *.txt *.json *.yaml *.yml
+
+# Exclude build/cache/temp files
+global-exclude *.pyc
+global-exclude __pycache__/
