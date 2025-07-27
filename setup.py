@@ -18,7 +18,7 @@ setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/FareehaJabeen275/RetinoExtractToolbox",
-    packages=find_packages(),
+    packages=find_packages(include=["retinoextract", "retinoextract.*"]),
     classifiers=[
         "Development Status :: 4 - Beta",
         "Intended Audience :: Science/Research",
@@ -45,7 +45,7 @@ setup(
     },
     include_package_data=True,
     package_data={
-        "retinoextract": ["resources/*", "resources/**/*"],
+        "retinoextract": ["resources/**"],
     },
     keywords="medical imaging, feature extraction, retinal analysis, image processing, computer vision",
     project_urls={
