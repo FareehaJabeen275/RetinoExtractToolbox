@@ -43,16 +43,16 @@ Make sure to include the main options while using dependent parameters. Otherwis
 **Installation**
 
 1. Clone the repository:
-  
-   'git clone https://github.com/yourusername/RetinoExtractToolbox.git'
+
+                'git clone https://github.com/yourusername/RetinoExtractToolbox.git'
    
-2. Navigate to the directory:
+3. Navigate to the directory:
   
    cd RetinoExtractToolbox
   
-3. Install required dependencies:
+4. Install required dependencies:
  
-   'pip install -r requirements.txt'
+                'pip install -r requirements.txt'
 
 **Usage:**
 
@@ -145,7 +145,7 @@ main.py: error: the following arguments are required: image_path
 Examples
 1. Extract All Features (CLI):
    
-   'python main.py glcm lbp wavelet --output_dir output/ image.jpg'
+               'python main.py glcm lbp wavelet --output_dir output/ image.jpg'
    
 
 2. Save Results as CSV (GUI):
