@@ -1,5 +1,23 @@
 **RetinoExtract Toolbox**
 
+**Table of Contents**
+
+- [Overview](#overview)
+- [Key Features](#key-features)
+- [Supported Feature Extractors](#supported-feature-extractors)
+- [Installation](#installation)
+- [Usage](#usage)
+  - [GUI](#graphical-user-interface-gui)
+  - [CLI](#command-line-interface-cli)
+- [Dependency Rules](#dependency-rules)
+- [Valid Option Values](#valid-option-values)
+- [Error Handling](#error-handling)
+- [Examples](#examples)
+- [Example Data](#example-data)
+- [Reference](#reference)
+- [Contributing](#contributing)
+- [License](#license)
+
 **Overview**
 RetinoExtract is an open-source Python toolbox for automated feature extraction from retinal fundus images. It supports both a Graphical User Interface (GUI) and Command Line Interface (CLI), making it accessible for users with varying technical expertise.
 
@@ -26,7 +44,7 @@ Make sure to include the main options while using dependent parameters. Otherwis
 
 1. Clone the repository:
   
-   git clone https://github.com/yourusername/RetinoExtractToolbox.git
+   'git clone https://github.com/yourusername/RetinoExtractToolbox.git'
    
 2. Navigate to the directory:
   
@@ -34,14 +52,14 @@ Make sure to include the main options while using dependent parameters. Otherwis
   
 3. Install required dependencies:
  
-   pip install r requirements.txt
+   'pip install -r requirements.txt'
 
 **Usage:**
 
 **Graphical User Interface (GUI)**
 1. Run the toolbox:
    
-                python gui.py
+                'python gui.py'
    
 2. Steps:
         A. Load Image: Use the "Load Image" button to select a fundus image.
@@ -57,12 +75,12 @@ Make sure to include the main options while using dependent parameters. Otherwis
 **Command Line Interface (CLI)**
 1. Run the toolbox using the CLI to automate feature extraction.
 
-                python main.py [OPTIONS] image_path
+                'python main.py [OPTIONS] image_path'
    
 2.Example Command
 An exmaple command to extract GLCM and LBP features from an image and save the results to a specific directory is given below:
 
-            python main.py glcm lbp_P 8 lbp_R 1 output_dir results/ path/to/image.jpg
+            'python main.py glcm lbp_P 8 lbp_R 1 --output_dir results/ path/to/image.jpg'
    
 3. Available Options
 
@@ -127,7 +145,7 @@ main.py: error: the following arguments are required: image_path
 Examples
 1. Extract All Features (CLI):
    
-   python main.py glcm lbp wavelet output_dir output/ image.jpg
+   'python main.py glcm lbp wavelet --output_dir output/ image.jpg'
    
 
 2. Save Results as CSV (GUI):
