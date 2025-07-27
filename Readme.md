@@ -9,7 +9,7 @@
 - [Usage](#usage)
   - [GUI](#graphical-user-interface-gui)
   - [CLI](#command-line-interface-cli)
-  - [Available Options ](#Available Options )
+  - [Available Options ](#Available-Options)
 - [Dependency Rules](#dependency-rules)
 - [Valid Option Values](#valid-option-values)
 - [Error Handling](#error-handling)
