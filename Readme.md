@@ -9,6 +9,7 @@
 - [Usage](#usage)
   - [GUI](#graphical-user-interface-gui)
   - [CLI](#command-line-interface-cli)
+  - [Available Options ](#Available Options )
 - [Dependency Rules](#dependency-rules)
 - [Valid Option Values](#valid-option-values)
 - [Error Handling](#error-handling)
@@ -21,11 +22,11 @@
 ### **Overview**
 RetinoExtract is an open-source Python toolbox for automated feature extraction from retinal fundus images. It supports both a Graphical User Interface (GUI) and Command Line Interface (CLI), making it accessible for users with varying technical expertise.
 
-**Key Features:**
+### **Key Features:**
 1. GUI support: Load images, select feature types, configure parameters, and extract features with a few clicks. Results can be saved as CSV.
 2. CLI interface: Automate batch feature extraction with full control over options and parameters.
 
-**Supported Feature Extractors**
+### **Supported Feature Extractors**
 The toolbox supports the following:
 1. Feature Extraction:
     Texture (GLCM, GLRLM, LBP)
@@ -42,15 +43,15 @@ The toolbox supports the following:
 Make sure to include main options when using dependent parameters. Otherwise, the toolbox will raise an error. 
 For Example: Ensure you provide main feature flags (e.g., --wavelet) when using dependent parameters (e.g., --wavelet_type), otherwise the toolbox will raise an error.
 
- **Installation**
+ ### **Installation**
 1.	Clone the repository
 ‘git clone https://github.com/yourusername/RetinoExtractToolbox.git’
 2.	Navigate to the directory
 ‘cd RetinoExtractToolbox’
 3.	Install required dependencies
 ‘pip install -r requirements.txt’
-**Usage**
-**Graphical User Interface (GUI)**
+### **Usage**
+### **Graphical User Interface (GUI)**
 
 ```bash
 python gui.py
@@ -66,7 +67,7 @@ Steps:
 **Screenshot**
 ![GUI Screenshot](gui_screenshot.png)
 
-**Command Line Interface (CLI)**
+### **Command Line Interface (CLI)**
 ```bash
 python main.py [OPTIONS] image_path
 ```
@@ -76,7 +77,7 @@ python main.py [OPTIONS] image_path
 python main.py glcm lbp_P 8 lbp_R 1 --output_dir results/ path/to/image.jpg
 ```
 
-**Available Options:**
+### **Available Options:**
 | Option                  | Description                                    | Example                     |
 | ----------------------- | ---------------------------------------------- | --------------------------- |
 | `--glcm`                | Extract GLCM (Gray Level Co-occurrence Matrix) | `--glcm`                    |
@@ -105,7 +106,7 @@ python main.py glcm lbp_P 8 lbp_R 1 --output_dir results/ path/to/image.jpg
 | `--hu_moments`          | Hu shape moments                               | `--hu_moments`              |
 | `--zernike`             | Zernike shape moments                          | `--zernike`                 |
 
- **Dependency Rules**
+ ### **Dependency Rules**
 Use the following together to avoid errors:
 --wavelet_type     requires --wavelet
 --level            requires --wavelet
@@ -118,27 +119,27 @@ Use the following together to avoid errors:
 --compactness      requires --superpixel
 --radius           requires --superpixel
 
-**Valid Option Values**
+### **Valid Option Values**
 •	`--wavelet_type`: haar, db1, sym2, coif1, etc.
 •	`--lbp_method`: uniform, default, ror, var
 •	`--hog_pixels_per_cell`: e.g., 8 8
 •	`--hog_cells_per_block`: e.g., 2 2
 •	`--compactness`, `--n_segments`: Positive integers
 
-**Error Handling**
+### **Error Handling**
 If required arguments are missing:
 ```text
 usage: main.py [h] [--wavelet_type WAVELET_TYPE] [--level LEVEL] ...
 main.py: error: the following arguments are required: image_path
 ```
-**Examples**
+### **Examples**
 1. **Extract all features (CLI):**
 ```bash
 python main.py glcm lbp wavelet --output_dir output/ image.jpg
 ```
 2. **Save results as CSV (GUI):**
    Check the "Save CSV" option → Click "Extract Features".
-**Example Data**
+### **Example Data**
 You may use publicly available datasets:
 1.	DRIVE
 2.	ORIGA
@@ -146,14 +147,14 @@ You may use publicly available datasets:
 4.	DRISHTI-GS
 5.	RIM-ONE
 
- **Reference**
+### **Reference**
 If you use this toolbox for research or projects, please cite:
 Jabeen et al. (2025). "RetinoExtract Toolbox: A Feature Extraction Tool for Fundus Images."
 
- **Contributing**
+### **Contributing**
 See `CONTRIBUTING.md` for contribution guidelines.
  
-**License**
+### **License**
 Distributed under the terms of the MIT license.
 See [LICENSE](LICENSE) for details.
 
