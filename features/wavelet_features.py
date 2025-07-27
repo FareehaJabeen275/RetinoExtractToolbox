@@ -30,7 +30,7 @@ def extract_wavelet_features(image, wavelet='db1', level=2):
                 features[f'coeff_{i}_{j}_entropy'] = entropy(sub_coeff)
                 features[f'coeff_{i}_{j}_michelson_contrast'] = michelson_contrast(sub_coeff)
                 
-                if np.var(flat) > 1e-10:
+                if np.var(flat) > 1e-8:
                     features[f'coeff_{i}_{j}_skewness'] = stats.skew(flat)
                     features[f'coeff_{i}_{j}_kurtosis'] = stats.kurtosis(flat)
                 else:
@@ -50,7 +50,7 @@ def extract_wavelet_features(image, wavelet='db1', level=2):
             features[f'coeff_{i}_entropy'] = entropy(coeff)
             features[f'coeff_{i}_michelson_contrast'] = michelson_contrast(coeff)
             
-            if np.var(flat) > 1e-10:
+            if np.var(flat) > 1e-8:
                 features[f'coeff_{i}_skewness'] = stats.skew(flat)
                 features[f'coeff_{i}_kurtosis'] = stats.kurtosis(flat)
             else:
