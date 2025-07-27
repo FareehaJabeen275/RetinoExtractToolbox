@@ -18,10 +18,10 @@
 - [Contributing](#contributing)
 - [License](#license)
 
-**Overview**
+### **Overview**
 RetinoExtract is an open-source Python toolbox for automated feature extraction from retinal fundus images. It supports both a Graphical User Interface (GUI) and Command Line Interface (CLI), making it accessible for users with varying technical expertise.
 
-**Key features:**
+**Key Features:**
 1. GUI support: Load images, select feature types, configure parameters, and extract features with a few clicks. Results can be saved as CSV.
 2. CLI interface: Automate batch feature extraction with full control over options and parameters.
 
@@ -39,7 +39,8 @@ The toolbox supports the following:
 2. Customizable Parameters for each feature type.
 3. Save Results: Export extracted feature values as CSV files.
 
-Make sure to include main options when using dependent parameters. Otherwise, the toolbox will raise an error.
+Make sure to include main options when using dependent parameters. Otherwise, the toolbox will raise an error. 
+For Example: Ensure you provide main feature flags (e.g., --wavelet) when using dependent parameters (e.g., --wavelet_type), otherwise the toolbox will raise an error.
 
  **Installation**
 1.	Clone the repository
