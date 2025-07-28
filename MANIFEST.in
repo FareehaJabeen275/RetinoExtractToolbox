@@ -12,19 +12,18 @@ include gui_screenshot.png
 recursive-include features *.py
 recursive-include input *.py
 recursive-include output *.py
-
-# Include tests 
 recursive-include test *.py
+recursive-include retinoextract *.py
 
-# Include the version file if using setuptools_scm
+# Include version file if present
 include retinoextract/_version.py
 
-# Include resource files
+# Include resource files (images, configs, etc.)
 recursive-include retinoextract/resources *
 
-# Include all Markdown, config, and data files 
+# Include documentation, config, and data files
 global-include *.md *.ini *.cfg *.txt *.json *.yaml *.yml
 
 # Exclude build/cache/temp files
-global-exclude *.pyc
+global-exclude *.py[cod]
 global-exclude __pycache__/
