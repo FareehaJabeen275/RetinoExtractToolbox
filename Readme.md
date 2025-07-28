@@ -14,6 +14,7 @@
 - [Valid Option Values](#valid-option-values)
 - [Error Handling](#error-handling)
 - [Examples](#examples)
+- [Batch Feature Extraction](#Batch-Feature-Extraction)
 - [Example Data](#example-data)
 - [Reference](#reference)
 - [Contributing](#contributing)
@@ -139,6 +140,32 @@ python main.py glcm lbp wavelet --output_dir output/ image.jpg
 ```
 2. **Save results as CSV (GUI):**
    Check the "Save CSV" option → Click "Extract Features".
+
+### **Batch Feature Extraction**
+
+To extract features from **all images in a directory**, use the `batch_extract.py` script:
+
+```bash
+python batch_extract.py --input_dir path/to/images --output_dir path/to/save/results --glcm --lbp --wavelet
+```
+
+**Arguments:**
+
+| Argument       | Description                                                    |
+| -------------- | -------------------------------------------------------------- |
+| `--input_dir`  | Directory containing input images (required)                   |
+| `--output_dir` | Directory to save extracted CSV files (required)               |
+| Feature flags  | Same as supported in `main.py` (e.g., `--glcm`, `--lbp`, etc.) |
+
+**Example:**
+
+```bash
+python batch_extract.py --input_dir dataset/fundus --output_dir features_csv/ --glcm --lbp_P 8 --lbp_R 1 --lbp
+```
+
+Each image is processed with the selected feature extractors, and the results are saved as separate CSV rows for easy downstream use.
+
+
 ### **Example Data**
 You may use publicly available datasets:
 1.	DRIVE
