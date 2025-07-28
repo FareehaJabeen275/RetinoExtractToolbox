@@ -22,30 +22,6 @@ from features.moments_all import compute_moments
 from input.image_loader import load_image, preprocess_image
 from skimage.color import rgb2hsv
 
-# def save_features_to_csv(features, output_dir):
-#     if not os.path.exists(output_dir):
-#         os.makedirs(output_dir)
-
-#     for feature_name, feature_data in features.items():
-#         file_path = os.path.join(output_dir, f'{feature_name}.csv')
-        
-#         if isinstance(feature_data, dict):
-#             # Convert dictionary to DataFrame with proper column names
-#             df = pd.DataFrame(list(feature_data.items()), columns=['Feature', 'Value'])
-#         elif isinstance(feature_data, list):
-#             if isinstance(feature_data[0], (list, tuple)):
-#                 # If list contains lists or tuples, create DataFrame directly
-#                 df = pd.DataFrame(feature_data)
-#             else:
-#                 # Otherwise, assume list of values
-#                 df = pd.DataFrame(feature_data, columns=['Value'])
-#         else:
-#             # Handle single values
-#             df = pd.DataFrame([feature_data], columns=['Value'])
-        
-#         # Save DataFrame to CSV
-#         df.to_csv(file_path, index=False)
-#         print(f"Saved {feature_name} features to {file_path}")
 def save_features_to_csv(features, output_dir):
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
@@ -164,7 +140,7 @@ def main(image_path, wavelet, level, lbp_P, lbp_R, lbp_method,
 
     # Save extracted features to CSV files
     save_features_to_csv(extracted_features, output_dir)
-
+    return extracted_features
 if __name__ == "__main__":
     # Set up argument parser
     parser = argparse.ArgumentParser(description='Process and display a medical image.')
