@@ -154,13 +154,13 @@ python batch_extract.py --input_dir path/to/images --output_dir path/to/save/res
 | Argument       | Description                                                    |
 | -------------- | -------------------------------------------------------------- |
 | `--input_dir`  | Directory containing input images (required)                   |
-| `--output_dir` | Directory to save extracted CSV files (required)               |
+| `--output_csv` | Directory to save extracted CSV files (required)               |
 | Feature flags  | Same as supported in `main.py` (e.g., `--glcm`, `--lbp`, etc.) |
 
 **Example:**
 
 ```bash
-python batch_extract.py --input_dir dataset/fundus --output_dir features_csv/ --glcm --lbp_P 8 --lbp_R 1 --lbp
+python batch_extract.py --input_dir dataset/fundus --output_csv features_csv/ --glcm --lbp_P 8 --lbp_R 1 --lbp
 ```
 
 Each image is processed using the selected feature extractors, and the results are saved as separate rows in a CSV file for easy downstream use. If no features are specified in the command, the script automatically extracts all supported features.
